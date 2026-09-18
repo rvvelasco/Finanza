@@ -1,0 +1,756 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0b1020">
+<title>Economía, Dinero e Inteligencia Financiera — Guía Maestra</title>
+<style>
+:root{
+  --bg:#0b1020;--panel:#12192d;--panel2:#0f1628;--text:#edf2ff;--muted:#aeb9d6;
+  --brand:#7c5cff;--brand2:#21d4fd;--good:#33d17a;--warn:#ffbf69;--bad:#ff6b6b;
+  --line:#25304b;--shadow:0 18px 50px rgba(0,0,0,.28);--radius:18px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:
+radial-gradient(circle at 15% 0%,rgba(124,92,255,.17),transparent 28%),
+radial-gradient(circle at 85% 10%,rgba(33,212,253,.12),transparent 25%),var(--bg);
+color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.6}
+a{color:#b7a9ff;text-decoration:none}
+a:hover{color:#fff}
+.container{width:min(1220px,92vw);margin:auto}
+header{position:sticky;top:0;z-index:50;background:rgba(11,16,32,.86);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
+.topbar{display:flex;gap:16px;align-items:center;justify-content:space-between;padding:14px 0}
+.brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.2px}
+.logo{width:38px;height:38px;border-radius:12px;display:grid;place-items:center;background:linear-gradient(135deg,var(--brand),var(--brand2));box-shadow:0 12px 28px rgba(124,92,255,.28)}
+.actions{display:flex;gap:8px}
+button,.btn{border:1px solid var(--line);background:#161f37;color:var(--text);padding:9px 13px;border-radius:12px;cursor:pointer;font-weight:700}
+button:hover,.btn:hover{border-color:#46557e}
+.hero{padding:68px 0 34px}
+.hero-grid{display:grid;grid-template-columns:1.5fr .85fr;gap:28px;align-items:end}
+.kicker{display:inline-flex;padding:7px 10px;border:1px solid var(--line);border-radius:999px;color:#cfc7ff;background:rgba(124,92,255,.08);font-size:.82rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em}
+h1{font-size:clamp(2.5rem,6vw,5rem);line-height:.98;margin:16px 0}
+h2{font-size:clamp(1.8rem,3vw,2.5rem);margin:0 0 14px}
+h3{margin:0 0 8px;font-size:1.16rem}
+p{color:var(--muted)}
+.hero p{font-size:1.12rem;max-width:800px}
+.hero-card{background:linear-gradient(145deg,rgba(124,92,255,.14),rgba(33,212,253,.07));border:1px solid var(--line);padding:22px;border-radius:var(--radius);box-shadow:var(--shadow)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:22px}
+.stat{background:rgba(255,255,255,.025);border:1px solid var(--line);padding:15px;border-radius:14px}
+.stat strong{display:block;font-size:1.5rem}
+.progress-wrap{margin-top:18px}
+.progress{height:10px;background:#0c1221;border-radius:999px;overflow:hidden;border:1px solid var(--line)}
+.progress > div{height:100%;width:0;background:linear-gradient(90deg,var(--brand),var(--brand2));transition:width .2s}
+.layout{display:grid;grid-template-columns:260px 1fr;gap:26px}
+aside{position:sticky;top:82px;height:max-content;max-height:calc(100vh - 100px);overflow:auto}
+.toc{background:rgba(18,25,45,.82);border:1px solid var(--line);border-radius:16px;padding:12px}
+.toc h4{margin:6px 8px 10px}
+.toc a{display:block;padding:7px 9px;border-radius:10px;font-size:.91rem;color:#c7d0e8}
+.toc a:hover{background:#19223a;color:white}
+main{min-width:0}
+section{scroll-margin-top:94px;margin:28px 0 44px}
+.section-head{display:flex;justify-content:space-between;gap:18px;align-items:end;margin-bottom:16px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.card{background:rgba(18,25,45,.82);border:1px solid var(--line);padding:19px;border-radius:var(--radius);box-shadow:0 10px 26px rgba(0,0,0,.13)}
+.card p:last-child{margin-bottom:0}
+.tag{display:inline-flex;padding:5px 8px;border-radius:999px;font-size:.75rem;font-weight:800;background:#1a2440;color:#c6d0eb;margin:3px 4px 3px 0;border:1px solid var(--line)}
+.callout{border-left:4px solid var(--brand);padding:14px 16px;background:#10172a;border-radius:0 14px 14px 0;margin:12px 0}
+.callout.good{border-left-color:var(--good)} .callout.warn{border-left-color:var(--warn)} .callout.bad{border-left-color:var(--bad)}
+table{width:100%;border-collapse:collapse;font-size:.93rem}
+th,td{padding:11px 10px;border-bottom:1px solid var(--line);vertical-align:top;text-align:left}
+th{color:#dce4ff;background:#141c31}
+tr:hover td{background:rgba(255,255,255,.02)}
+.formula{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;background:#0b1222;border:1px solid var(--line);padding:12px;border-radius:12px;overflow:auto}
+input,select{width:100%;padding:10px 12px;background:#0d1425;border:1px solid var(--line);border-radius:11px;color:var(--text);outline:none}
+input:focus,select:focus{border-color:#5b6ca4}
+label{display:block;font-size:.84rem;color:#b9c4df;margin:9px 0 5px}
+.field-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.result{margin-top:12px;padding:13px;border-radius:12px;background:#0c1426;border:1px solid var(--line)}
+.result strong{font-size:1.08rem}
+.pill-good{color:#8ff0b7}.pill-warn{color:#ffd69a}.pill-bad{color:#ffabab}
+details{border:1px solid var(--line);border-radius:13px;padding:10px 13px;background:rgba(255,255,255,.02);margin:10px 0}
+summary{cursor:pointer;font-weight:800}
+ul{color:var(--muted)}
+li{margin:4px 0}
+.checklist label{display:flex;gap:10px;align-items:flex-start;padding:7px 0;color:#cfd7eb}
+.checklist input{width:auto;margin-top:5px}
+.timeline{display:grid;gap:10px}
+.timeline .step{display:grid;grid-template-columns:42px 1fr;gap:12px;align-items:start}
+.num{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;background:#18213a;border:1px solid var(--line);font-weight:900}
+.glossary{columns:2 320px}
+.glossary dt{font-weight:900;color:#dce4ff;margin-top:10px}
+.glossary dd{margin:0 0 8px;color:var(--muted)}
+footer{padding:40px 0 70px;color:#8793b3}
+.small{font-size:.84rem}.muted{color:#8f9bb8}
+.hide{display:none}
+.mobile-toc{display:none}
+@media(max-width:980px){
+ .hero-grid,.layout{grid-template-columns:1fr}
+ aside{display:none}.mobile-toc{display:block;margin-bottom:18px}
+ .grid3{grid-template-columns:1fr 1fr}
+}
+@media(max-width:680px){
+ .grid,.grid3,.field-grid,.stats{grid-template-columns:1fr}
+ .topbar{align-items:flex-start}.actions{flex-wrap:wrap;justify-content:flex-end}
+ h1{font-size:2.7rem}
+ .container{width:min(94vw,1220px)}
+}
+@media print{
+ header,aside,.actions,.mobile-toc,button{display:none!important}
+ body{background:#fff;color:#111}.card,.hero-card,.toc{box-shadow:none;background:#fff;border-color:#ddd}
+ p,li,td{color:#333} a{color:#111}
+}
+</style>
+</head>
+<body>
+<header>
+ <div class="container topbar">
+  <div class="brand"><div class="logo">₿</div><div>Economía + Dinero + Negocios</div></div>
+  <div class="actions">
+   <button onclick="toggleTheme()">☾ Tema</button>
+   <button onclick="window.print()">🖨 Imprimir / PDF</button>
+   <button onclick="markAll()">✓ Marcar todo</button>
+  </div>
+ </div>
+</header>
+
+<div class="container hero">
+ <div class="hero-grid">
+  <div>
+   <span class="kicker">Guía maestra • nivel 0 → avanzado</span>
+   <h1>Aprender a manejar dinero es aprender a tomar decisiones.</h1>
+   <p>Una hoja de ruta integral para entender la economía, administrar tu dinero, invertir con criterio, proteger patrimonio y construir un negocio rentable.</p>
+   <div class="stats">
+    <div class="stat"><strong>15+</strong><span class="muted">bloques de conocimiento</span></div>
+    <div class="stat"><strong>100+</strong><span class="muted">conceptos y métricas</span></div>
+    <div class="stat"><strong>6</strong><span class="muted">calculadoras + checklists</span></div>
+   </div>
+   <div class="progress-wrap">
+    <div class="small muted">Tu recorrido</div>
+    <div class="progress"><div id="progressBar"></div></div>
+   </div>
+  </div>
+  <div class="hero-card">
+   <h3>Cómo usar este manual</h3>
+   <p class="small">Leé primero fundamentos → finanzas personales → inversión → negocios → estrategia. Después repetí el circuito con tus números reales.</p>
+   <div class="callout good"><b>Principio rector:</b> no alcanza con ganar más. Hay que convertir ingresos en estabilidad, activos, opciones y capacidad de decisión.</div>
+  </div>
+ </div>
+</div>
+
+<div class="container layout">
+ <aside>
+  <nav class="toc">
+   <h4>Contenido</h4>
+   <a href="#mapa">🧭 Mapa mental</a>
+   <a href="#economia">1. Economía</a>
+   <a href="#dinero">2. Dinero</a>
+   <a href="#banca">3. Banca y política económica</a>
+   <a href="#personal">4. Finanzas personales</a>
+   <a href="#deuda">5. Deuda y crédito</a>
+   <a href="#inversion">6. Inversiones</a>
+   <a href="#jubilacion">7. Jubilación y patrimonio</a>
+   <a href="#riesgo">8. Riesgo y protección</a>
+   <a href="#impuestos">9. Impuestos y legal</a>
+   <a href="#contabilidad">10. Contabilidad profunda</a>
+   <a href="#emprendedor">11. Emprender</a>
+   <a href="#empresa">12. Empresa</a>
+   <a href="#financiacion">13. Financiación, socios y exits</a>
+   <a href="#internacional">14. Finanzas internacionales</a>
+   <a href="#estrategia">15. Estrategia</a>
+   <a href="#psicologia">16. Psicología</a>
+   <a href="#decisiones">🧠 Marco de decisiones</a>
+   <a href="#argentina">17. Argentina</a>
+   <a href="#calculadoras">🧮 Calculadoras</a>
+   <a href="#plan">🗺 Plan de aprendizaje</a>
+   <a href="#checklist">✅ Checklists</a>
+   <a href="#glosario">📖 Glosario</a>
+  </nav>
+ </aside>
+
+ <main>
+  <div class="mobile-toc">
+   <details><summary>☰ Ver índice</summary>
+    <div class="toc" style="margin-top:10px">
+     <a href="#mapa">Mapa mental</a> · <a href="#economia">Economía</a> · <a href="#dinero">Dinero</a> ·
+     <a href="#banca">Banca</a> · <a href="#personal">Personal</a> · <a href="#deuda">Deuda</a> ·
+     <a href="#inversion">Inversión</a> · <a href="#jubilacion">Jubilación</a> · <a href="#riesgo">Riesgo</a> ·
+     <a href="#impuestos">Impuestos</a> · <a href="#contabilidad">Contabilidad</a> · <a href="#emprendedor">Emprender</a> ·
+     <a href="#empresa">Empresa</a> · <a href="#financiacion">Financiación</a> · <a href="#internacional">Internacional</a> ·
+     <a href="#estrategia">Estrategia</a> · <a href="#decisiones">Decisiones</a> · <a href="#argentina">Argentina</a>
+    </div>
+   </details>
+  </div>
+
+  <section id="mapa">
+   <div class="section-head"><div><span class="kicker">Mapa mental</span><h2>La arquitectura del dinero</h2></div></div>
+   <div class="grid3">
+    <div class="card"><h3>Flujo</h3><p>Ingresos → gastos → ahorro → inversión → patrimonio.</p></div>
+    <div class="card"><h3>Stock</h3><p>Patrimonio neto = activos − pasivos. Tu balance cuenta una historia distinta al flujo mensual.</p></div>
+    <div class="card"><h3>Decisiones</h3><p>Consumir hoy, reservar liquidez, reducir deuda, invertir o reinvertir en un negocio.</p></div>
+   </div>
+   <div class="callout"><b>La pregunta más útil:</b> “¿Qué hace esta decisión con mi liquidez, mi riesgo, mi patrimonio y mis opciones futuras?”</div>
+  </section>
+
+  <section id="economia">
+   <div class="section-head"><div><span class="kicker">1</span><h2>Economía: entender el tablero</h2></div></div>
+   <div class="grid">
+    <div class="card"><h3>Microeconomía</h3><p>Analiza decisiones de personas y empresas: oferta, demanda, precios, incentivos, costos, competencia, elasticidad, externalidades y estructuras de mercado.</p></div>
+    <div class="card"><h3>Macroeconomía</h3><p>Observa inflación, desempleo, producción, crecimiento, tasas de interés, tipo de cambio, gasto público, política monetaria y ciclos económicos.</p></div>
+    <div class="card"><h3>Oferta y demanda</h3><p>El precio coordina compradores y vendedores. Cambios en costos, ingresos, expectativas, sustitutos, regulación y disponibilidad desplazan curvas.</p></div>
+    <div class="card"><h3>Costo de oportunidad</h3><p>Elegir A significa renunciar a B. El costo económico relevante es la mejor alternativa que dejás pasar, no solo el dinero que desembolsás.</p></div>
+   </div>
+   <div class="grid">
+    <div class="card"><h3>Inflación</h3><p>Es un aumento sostenido del nivel general de precios. El efecto práctico es menor poder adquisitivo de una unidad monetaria si los ingresos no acompañan.</p>
+      <div class="formula">Poder adquisitivo aproximado ≈ ingreso nominal / índice de precios</div>
+    </div>
+    <div class="card"><h3>Tasa nominal vs. real</h3><p>La tasa nominal es la observada en dinero corriente. La tasa real intenta descontar la inflación.</p>
+      <div class="formula">1 + tasa real = (1 + tasa nominal) / (1 + inflación)</div>
+    </div>
+    <div class="card"><h3>PIB, productividad y crecimiento</h3><p>Más producción por trabajador suele elevar el nivel de vida sostenible. Tecnología, capital humano, infraestructura, instituciones y asignación de recursos importan.</p></div>
+    <div class="card"><h3>Tasas de interés</h3><p>El interés es el precio intertemporal del dinero. Incide en préstamos, ahorro, bonos, valuaciones, inversión empresarial y consumo.</p></div>
+   </div>
+   <details><summary>Conceptos que conviene dominar</summary>
+    <div class="grid3">
+     <div><b>Elasticidad</b><p class="small">Cuánto cambia una variable ante cambios en otra.</p></div>
+     <div><b>Productividad marginal</b><p class="small">Producto adicional asociado a una unidad extra de un factor.</p></div>
+     <div><b>Competencia</b><p class="small">Cantidad de oferentes, barreras de entrada y poder de fijación de precios.</p></div>
+     <div><b>Externalidad</b><p class="small">Costo o beneficio sobre terceros que no queda completamente reflejado en el precio.</p></div>
+     <div><b>Bienes sustitutos</b><p class="small">Alternativas que cubren una necesidad similar.</p></div>
+     <div><b>Bienes complementarios</b><p class="small">Productos cuyo consumo está relacionado.</p></div>
+    </div>
+   </details>
+  </section>
+
+  <section id="dinero">
+   <div class="section-head"><div><span class="kicker">2</span><h2>Dinero: qué es y cómo funciona</h2></div></div>
+   <div class="grid3">
+    <div class="card"><h3>Medio de intercambio</h3><p>Reduce la necesidad de trueque y facilita transacciones.</p></div>
+    <div class="card"><h3>Unidad de cuenta</h3><p>Permite expresar y comparar precios y obligaciones.</p></div>
+    <div class="card"><h3>Reserva de valor</h3><p>Permite trasladar poder de compra en el tiempo, aunque ninguna reserva está libre de riesgo.</p></div>
+   </div>
+   <div class="grid">
+    <div class="card"><h3>Interés simple</h3><div class="formula">Interés = Capital × tasa × tiempo</div><p>Útil como aproximación cuando el interés no se reinvierte.</p></div>
+    <div class="card"><h3>Interés compuesto</h3><div class="formula">VF = VP × (1 + r)^n</div><p>El interés generado se incorpora al capital y puede generar más interés.</p></div>
+    <div class="card"><h3>Liquidez</h3><p>Capacidad de convertir un activo en dinero con rapidez y sin una pérdida importante de valor.</p></div>
+    <div class="card"><h3>Riesgo de moneda</h3><p>Un activo, deuda o ingreso puede estar expuesto a que cambie el poder adquisitivo relativo entre monedas.</p></div>
+   </div>
+   <div class="callout warn"><b>Regla de higiene:</b> distinguí siempre valor nominal, valor real, tasa efectiva, plazo y moneda. Comparar productos financieros ignorando una de estas variables suele llevar a conclusiones erróneas.</div>
+  </section>
+
+  <section id="personal">
+   <div class="section-head"><div><span class="kicker">3</span><h2>Finanzas personales</h2></div></div>
+   <div class="grid">
+    <div class="card"><h3>Presupuesto</h3><p>Registrá ingresos netos y gastos. Separá gastos fijos, variables, periódicos y extraordinarios.</p>
+      <table><tr><th>Categoría</th><th>Ejemplos</th></tr><tr><td>Necesidades</td><td>Vivienda, comida, transporte, salud</td></tr><tr><td>Estilo de vida</td><td>Ocio, compras discrecionales, upgrades</td></tr><tr><td>Construcción de patrimonio</td><td>Ahorro, inversión, amortización de deuda cara</td></tr></table>
+    </div>
+    <div class="card"><h3>Patrimonio neto</h3><p>Armá una foto trimestral de todo lo que tenés y todo lo que debés.</p><div class="formula">Patrimonio neto = Activos − Pasivos</div><p class="small">La meta no es que el número sea enorme mañana; es entender qué lo hace subir o bajar.</p></div>
+    <div class="card"><h3>Fondo de emergencia</h3><p>Su función es absorber golpes de liquidez: desempleo, reparación, salud, mudanza o caída de ingresos.</p><p class="small">Definí el tamaño según estabilidad de tus ingresos, responsabilidades, seguros y capacidad de acceso al crédito.</p></div>
+    <div class="card"><h3>Automatización</h3><p>Programá transferencias para ahorro e inversión apenas cobrás. Diseñá el sistema para depender menos de la fuerza de voluntad.</p></div>
+   </div>
+   <div class="callout good"><b>Marco 4 cuentas:</b> 1) operar el mes, 2) provisiones de corto plazo, 3) emergencia, 4) construcción de patrimonio/inversión. Los nombres y porcentajes pueden cambiar; la separación de funciones es lo importante.</div>
+  </section>
+
+  <section id="deuda">
+   <div class="section-head"><div><span class="kicker">4</span><h2>Deudas, crédito y financiación</h2></div></div>
+   <div class="grid">
+    <div class="card"><h3>Deuda productiva vs. deuda de consumo</h3><p>La etiqueta no garantiza que una deuda sea buena o mala. Preguntá: ¿qué financia?, ¿qué flujo genera?, ¿qué riesgo asumís?, ¿cuánto cuesta realmente?</p></div>
+    <div class="card"><h3>Costo financiero total</h3><p>Para comparar crédito, mirá tasa, comisiones, seguros, impuestos, gastos y estructura de cuotas. El costo total importa más que una tasa publicitada aislada.</p></div>
+    <div class="card"><h3>Tarjeta de crédito</h3><p>Puede ser una herramienta de pago y organización, pero financiar saldos puede tener un costo elevado. Conocé fecha de cierre, vencimiento, pago total y pago mínimo.</p></div>
+    <div class="card"><h3>Orden de ataque</h3><p>Listá deuda, saldo, tasa/costo, vencimiento y garantías. Priorizá según costo, riesgo de incumplimiento y consecuencias.</p></div>
+   </div>
+   <div class="formula">Cuota aproximada de un préstamo amortizable = P × [r(1+r)^n] / [(1+r)^n − 1]</div>
+   <div class="callout bad"><b>Alerta:</b> refinanciar una deuda puede mejorar liquidez hoy y empeorar costo total mañana. Antes de aceptar, compará saldo nuevo, plazo, costo y escenario de estrés.</div>
+  </section>
+
+  <section id="inversion">
+   <div class="section-head"><div><span class="kicker">5</span><h2>Inversiones: de ahorrar a asignar capital</h2></div></div>
+   <div class="grid">
+    <div class="card"><h3>Objetivo, plazo y tolerancia a pérdidas</h3><p>La inversión debe partir de para qué es el dinero, cuándo se necesita y qué caída se puede soportar sin liquidar en el peor momento.</p></div>
+    <div class="card"><h3>Renta fija</h3><p>Instrumentos donde el flujo está determinado por reglas conocidas. Aun así existen riesgo de crédito, duración, liquidez, reinversión e inflación.</p></div>
+    <div class="card"><h3>Renta variable</h3><p>Una acción representa participación en una empresa. Su valor depende de expectativas de ganancias, tasas, competencia, calidad del negocio y múltiplos de mercado.</p></div>
+    <div class="card"><h3>Fondos / ETFs</h3><p>Permiten agrupar muchos activos. Revisá composición, costos, liquidez, moneda, metodología y riesgo de concentración.</p></div>
+    <div class="card"><h3>Inmuebles</h3><p>Combinan renta potencial y variación de precio con baja liquidez, costos de entrada/salida, mantenimiento y riesgo regulatorio.</p></div>
+    <div class="card"><h3>Negocio propio</h3><p>Puede tener alto potencial de retorno y alto riesgo de concentración. No confundas “invertir en tu empresa” con tener diversificación.</p></div>
+   </div>
+   <div class="card">
+    <h3>Diversificación inteligente</h3>
+    <p>Diversificar no significa comprar “de todo”; significa evitar que un solo activo, cliente, moneda, proveedor, sector o error pueda destruir tu plan.</p>
+    <table><tr><th>Riesgo</th><th>Pregunta</th></tr>
+     <tr><td>Concentración</td><td>¿Cuánto depende mi patrimonio de una sola empresa/activo?</td></tr>
+     <tr><td>Liquidez</td><td>¿Puedo salir cuando necesito el dinero?</td></tr>
+     <tr><td>Moneda</td><td>¿En qué moneda están mis ingresos, gastos y activos?</td></tr>
+     <tr><td>Crédito</td><td>¿Qué pasa si la contraparte incumple?</td></tr>
+     <tr><td>Duración/plazo</td><td>¿Qué pasa si las tasas cambian antes de que necesite el capital?</td></tr>
+    </table>
+   </div>
+   <details><summary>Valuar una inversión</summary>
+    <p>Hay dos grandes lentes: <b>valor intrínseco</b> (flujos futuros descontados, calidad económica, ventajas competitivas) y <b>valor relativo</b> (comparación de múltiplos con pares). Ninguno elimina incertidumbre.</p>
+    <div class="formula">Valor presente ≈ Σ [Flujo_t / (1 + tasa)^t]</div>
+   </details>
+  </section>
+
+  <section id="riesgo">
+   <div class="section-head"><div><span class="kicker">6</span><h2>Riesgo, seguros y protección patrimonial</h2></div></div>
+   <div class="grid3">
+    <div class="card"><h3>Evitar</h3><p>Eliminar exposiciones innecesarias: fraude, contratos incomprensibles, deuda impagable.</p></div>
+    <div class="card"><h3>Reducir</h3><p>Controles, backups, límites, diversificación, seguros, redundancia de proveedores.</p></div>
+    <div class="card"><h3>Transferir</h3><p>Seguro, garantías y cláusulas contractuales bien diseñadas.</p></div>
+   </div>
+   <div class="grid">
+    <div class="card"><h3>Seguros</h3><p>Protegen contra eventos de baja frecuencia y alto impacto. Compará suma asegurada, exclusiones, franquicia, límites y actualización de cobertura.</p></div>
+    <div class="card"><h3>Fraude financiero</h3><p>Desconfiá de rentabilidades garantizadas muy superiores al mercado, presión por decidir hoy, promesas sin riesgo y falta de información verificable.</p></div>
+    <div class="card"><h3>Ciberseguridad</h3><p>Contraseñas únicas, MFA, backups, recuperación de cuentas, control de permisos y segregación de fondos personales/empresariales.</p></div>
+    <div class="card"><h3>Riesgo operativo</h3><p>Documentá procesos críticos y asegurá que el negocio no dependa de una sola persona, PC, proveedor o cuenta.</p></div>
+   </div>
+  </section>
+
+  <section id="impuestos">
+   <div class="section-head"><div><span class="kicker">7</span><h2>Impuestos, legal y administración</h2></div></div>
+   <div class="callout warn"><b>Importante:</b> las leyes, alícuotas, regímenes y obligaciones cambian. Para decisiones reales verificá siempre la normativa vigente y asesorate con un profesional matriculado cuando corresponda.</div>
+   <div class="grid">
+    <div class="card"><h3>Impuestos</h3><p>Entendé qué gravan: renta, consumo, patrimonio, transacciones, importación/exportación, nómina, etc. Separá lo contable de lo fiscal.</p></div>
+    <div class="card"><h3>Documentación</h3><p>Conservá facturas, comprobantes, contratos, recibos, movimientos bancarios, registros de inventario y conciliaciones.</p></div>
+    <div class="card"><h3>Separación de patrimonios</h3><p>Cuando emprendés, separar cuentas y registros personales de los del negocio mejora control, análisis y trazabilidad.</p></div>
+    <div class="card"><h3>Contratos</h3><p>Definí partes, objeto, precio, plazos, entregables, garantías, propiedad intelectual, confidencialidad, terminación y mecanismo de resolución de disputas.</p></div>
+   </div>
+  </section>
+
+  <section id="emprendedor">
+   <div class="section-head"><div><span class="kicker">8</span><h2>Emprender: convertir una idea en un sistema económico</h2></div></div>
+   <div class="grid">
+    <div class="card"><h3>Problema → cliente → propuesta</h3><p>Un negocio existe cuando resuelve un problema para alguien que está dispuesto y puede pagar.</p><div class="tag">Problema</div><div class="tag">Cliente</div><div class="tag">Oferta</div><div class="tag">Canal</div><div class="tag">Precio</div></div>
+    <div class="card"><h3>Modelo de negocio</h3><p>Definí cómo entra el dinero, qué actividades cuestan, qué activos necesitás y por qué el sistema puede sostenerse.</p></div>
+    <div class="card"><h3>MVP</h3><p>La primera versión no debe demostrar que “tu idea es genial”; debe producir evidencia sobre un problema concreto, un cliente y una disposición a pagar.</p></div>
+    <div class="card"><h3>Validación</h3><p>Medí conversaciones, leads, preventas, tasa de conversión, retención, recompra y margen. Opiniones sin comportamiento real son evidencia débil.</p></div>
+   </div>
+   <div class="card">
+    <h3>Unit economics</h3>
+    <table><tr><th>Métrica</th><th>Fórmula orientativa</th><th>Qué responde</th></tr>
+      <tr><td>Ticket promedio</td><td>Ventas / pedidos</td><td>¿Cuánto factura cada operación?</td></tr>
+      <tr><td>Margen bruto</td><td>(Ventas − costo variable directo) / ventas</td><td>¿Qué queda antes de gastos operativos?</td></tr>
+      <tr><td>CAC</td><td>Gasto comercial / nuevos clientes</td><td>¿Cuánto cuesta conseguir un cliente?</td></tr>
+      <tr><td>Churn</td><td>Clientes perdidos / clientes al inicio</td><td>¿Cuántos se van?</td></tr>
+      <tr><td>LTV</td><td>Valor esperado del cliente a lo largo del vínculo</td><td>¿Cuánto valor deja?</td></tr>
+      <tr><td>Punto de equilibrio</td><td>Costos fijos / margen de contribución unitario</td><td>¿Cuántas unidades necesito vender?</td></tr>
+    </table>
+   </div>
+  </section>
+
+  <section id="empresa">
+   <div class="section-head"><div><span class="kicker">9</span><h2>Empresa: contabilidad, caja y crecimiento</h2></div></div>
+   <div class="grid3">
+    <div class="card"><h3>Estado de resultados</h3><p>Mide desempeño durante un período: ventas, costos, gastos, resultado operativo y resultado final.</p></div>
+    <div class="card"><h3>Balance</h3><p>Es una foto: activos, pasivos y patrimonio.</p><div class="formula">Activos = Pasivos + Patrimonio</div></div>
+    <div class="card"><h3>Flujo de caja</h3><p>Muestra entradas y salidas reales de efectivo. Una empresa puede mostrar utilidad contable y quedarse sin caja.</p></div>
+   </div>
+   <div class="grid">
+    <div class="card"><h3>Margen</h3><p>No confundir facturación con rentabilidad. Conocé margen bruto, margen de contribución, EBITDA/operativo cuando aplique y margen neto.</p></div>
+    <div class="card"><h3>Capital de trabajo</h3><p>Inventario + cuentas por cobrar − cuentas por pagar. Crecer rápido puede consumir caja si el ciclo de conversión es largo.</p></div>
+    <div class="card"><h3>Unit economics antes de escalar</h3><p>Escalar una unidad que pierde dinero multiplica la pérdida. Primero entendé costos variables, adquisición, retención y capacidad operativa.</p></div>
+    <div class="card"><h3>Pricing</h3><p>Precio ≠ costo + margen únicamente. Considerá valor entregado, demanda, competencia, segmentación, capacidad, costo de servir y objetivos de posicionamiento.</p></div>
+   </div>
+   <details><summary>KPIs que una empresa debería observar</summary>
+    <div class="grid3">
+      <div><b>Ventas</b><p class="small">Ingresos, ticket, crecimiento, mix de productos.</p></div>
+      <div><b>Clientes</b><p class="small">Leads, conversión, CAC, retención, churn, recompra.</p></div>
+      <div><b>Operaciones</b><p class="small">Tiempo de ciclo, defectos, devoluciones, utilización de capacidad.</p></div>
+      <div><b>Finanzas</b><p class="small">Margen, caja, burn rate, runway, deuda.</p></div>
+      <div><b>Inventario</b><p class="small">Rotación, días de stock, quiebres, obsolescencia.</p></div>
+      <div><b>Personas</b><p class="small">Costo laboral, rotación, productividad y capacidad.</p></div>
+    </div>
+   </details>
+  </section>
+
+  <section id="estrategia">
+   <div class="section-head"><div><span class="kicker">10</span><h2>Estrategia financiera y empresarial</h2></div></div>
+   <div class="grid">
+    <div class="card"><h3>Asignación de capital</h3><p>Cada peso/dólar retenido por una empresa puede destinarse a: capital de trabajo, reducción de deuda, mantenimiento, marketing, talento, tecnología, adquisiciones o distribución a socios.</p></div>
+    <div class="card"><h3>Retorno sobre capital</h3><p>Compará el rendimiento obtenido sobre el capital utilizado con el costo y el riesgo de ese capital.</p></div>
+    <div class="card"><h3>Runway</h3><p>Para empresas con consumo neto de caja: cuántos meses puede sostenerse el negocio antes de necesitar nuevo capital si no cambia el ritmo de consumo.</p><div class="formula">Runway ≈ Caja disponible / Consumo neto mensual</div></div>
+    <div class="card"><h3>Escenarios</h3><p>Construí base, adverso y favorable. El objetivo no es adivinar: es saber qué decisiones tomar si cambia una variable.</p></div>
+   </div>
+   <div class="grid3">
+    <div class="card"><h3>Moat / ventaja</h3><p>Marca, costo, red, tecnología, datos, distribución, switching costs o procesos difíciles de copiar.</p></div>
+    <div class="card"><h3>Concentración</h3><p>Un cliente que representa demasiadas ventas puede convertirse en riesgo de supervivencia.</p></div>
+    <div class="card"><h3>Gobierno</h3><p>Roles claros, autorizaciones, controles y reportes reducen errores y conflictos cuando el equipo crece.</p></div>
+   </div>
+  </section>
+
+  <section id="psicologia">
+   <div class="section-head"><div><span class="kicker">11</span><h2>Psicología del dinero</h2></div></div>
+   <div class="grid">
+    <div class="card"><h3>Aversión a la pérdida</h3><p>Las pérdidas suelen sentirse más intensamente que ganancias equivalentes. Esto puede llevar a mantener malas inversiones o evitar buenas oportunidades sin evaluar probabilidades.</p></div>
+    <div class="card"><h3>Sesgo de presente</h3><p>Tendencia a sobrevalorar una recompensa inmediata frente a beneficios futuros.</p></div>
+    <div class="card"><h3>FOMO</h3><p>El miedo a “quedarse afuera” puede convertir una decisión financiera en una reacción emocional.</p></div>
+    <div class="card"><h3>Efecto estilo de vida</h3><p>Al subir el ingreso, aumentar automáticamente el gasto puede impedir que crezca el patrimonio.</p></div>
+   </div>
+   <div class="callout good"><b>Diseñá fricciones:</b> límites de gasto, automatizaciones, espera de 24–72 horas para compras no esenciales, reglas predefinidas para invertir y revisiones mensuales.</div>
+  </section>
+
+
+  <section id="banca">
+   <div class="section-head"><div><span class="kicker">3</span><h2>Banca y política económica</h2></div></div>
+   <div class="grid">
+    <div class="card"><h3>Qué hace un banco</h3><p>Intermedia ahorro y crédito, administra medios de pago, transforma plazos y gestiona riesgos. Para evaluar un banco, mirá liquidez, solvencia, calidad de cartera y concentración.</p></div>
+    <div class="card"><h3>Banco central</h3><p>En términos generales, una autoridad monetaria puede operar sobre condiciones monetarias y financieras mediante instrumentos como tasas de referencia, operaciones de mercado y requerimientos regulatorios, según su marco institucional.</p></div>
+    <div class="card"><h3>Política monetaria</h3><p>Busca influir sobre inflación, actividad y condiciones financieras. Sus efectos suelen transmitirse con rezagos y pueden tener efectos diferentes entre hogares, deudores, ahorristas y empresas.</p></div>
+    <div class="card"><h3>Política fiscal</h3><p>Ingresos y gastos del Estado afectan demanda agregada, distribución, inversión pública y sostenibilidad de deuda. Separá déficit, deuda, gasto primario, intereses y fuentes de financiamiento.</p></div>
+    <div class="card"><h3>Multiplicador y crédito</h3><p>El sistema financiero puede ampliar el financiamiento disponible, pero no existe una relación mecánica simple entre reservas, depósitos y “dinero nuevo” aplicable a todos los sistemas.</p></div>
+    <div class="card"><h3>Curva de rendimiento</h3><p>La relación entre tasas y vencimientos da información sobre expectativas y riesgo. Cambios en tasas afectan el precio de bonos y la valuación de activos.</p></div>
+   </div>
+   <div class="callout"><b>Para leer noticias económicas:</b> preguntá qué variable cambió, para quién, en qué horizonte, desde qué base y con qué fuente. Una cifra aislada rara vez cuenta toda la historia.</div>
+  </section>
+
+  <section id="jubilacion">
+   <div class="section-head"><div><span class="kicker">7</span><h2>Jubilación, independencia y patrimonio de largo plazo</h2></div></div>
+   <div class="grid">
+    <div class="card"><h3>Horizonte temporal</h3><p>Cuanto más lejano sea el objetivo y más flexible sea el momento de uso, más herramientas podés analizar; cuanto más cercano, más importante se vuelve preservar liquidez y reducir riesgo de una mala sincronización.</p></div>
+    <div class="card"><h3>Tasa de ahorro</h3><p>No es solo “cuánto invertís”, sino qué proporción de tu ingreso estás convirtiendo en activos después de cubrir obligaciones razonables.</p></div>
+    <div class="card"><h3>Inflación de estilo de vida</h3><p>Una mejora salarial que se consume por completo no aumenta automáticamente tu capacidad futura. Separá mejoras de calidad de vida de aumentos permanentes de costos.</p></div>
+    <div class="card"><h3>Patrimonio que genera flujo</h3><p>Acciones, bonos, inmuebles, negocios y otros activos pueden producir ingresos o apreciación. Analizá siempre retorno, riesgo, liquidez y costos.</p></div>
+   </div>
+   <div class="callout good"><b>Independencia financiera:</b> no es una cifra mágica universal. Es la relación entre tu nivel de gasto sostenible, tus activos, tus ingresos y la incertidumbre de tus necesidades futuras.</div>
+  </section>
+
+  <section id="contabilidad">
+   <div class="section-head"><div><span class="kicker">10</span><h2>Contabilidad profunda: el idioma de la empresa</h2></div></div>
+   <div class="grid">
+    <div class="card"><h3>Devengado vs. caja</h3><p>La contabilidad puede reconocer ingresos y gastos cuando se generan o corresponden, mientras la caja registra el momento efectivo del cobro o pago. Por eso utilidad y efectivo no son sinónimos.</p></div>
+    <div class="card"><h3>Depreciación</h3><p>Asigna el costo de ciertos activos de larga duración a varios períodos contables. No implica necesariamente una salida de caja en el momento del registro.</p></div>
+    <div class="card"><h3>Cuentas por cobrar</h3><p>Vender no equivale a cobrar. Medí antigüedad de saldos, morosidad, plazos y concentración de clientes.</p></div>
+    <div class="card"><h3>Cuentas por pagar</h3><p>Negociar plazos puede liberar caja, pero también puede perjudicar relaciones con proveedores o costo de reposición. El objetivo es optimizar, no simplemente atrasar.</p></div>
+   </div>
+   <div class="card">
+    <h3>Las 3 preguntas contables</h3>
+    <table><tr><th>Estado</th><th>Pregunta</th><th>Error típico</th></tr>
+      <tr><td>Resultados</td><td>¿El negocio produce resultado?</td><td>Confundir facturación con utilidad.</td></tr>
+      <tr><td>Balance</td><td>¿Qué posee y qué debe?</td><td>Ignorar deuda, inventario o cuentas a cobrar.</td></tr>
+      <tr><td>Caja</td><td>¿Tiene efectivo para operar?</td><td>Crecer sin financiar el capital de trabajo.</td></tr>
+    </table>
+   </div>
+  </section>
+
+  <section id="financiacion">
+   <div class="section-head"><div><span class="kicker">13</span><h2>Financiación, socios, venture y salida</h2></div></div>
+   <div class="grid">
+    <div class="card"><h3>Bootstrapping</h3><p>Crecimiento financiado principalmente con recursos del propio negocio y sus clientes. Favorece control, pero puede limitar velocidad.</p></div>
+    <div class="card"><h3>Deuda</h3><p>No diluye participación, pero agrega pagos y obligaciones. Evaluá cobertura, vencimientos, garantías y escenarios de caída de ventas.</p></div>
+    <div class="card"><h3>Equity</h3><p>Vender una parte del capital puede financiar crecimiento. A cambio, disminuye el porcentaje de propiedad de los socios actuales y se incorporan nuevos derechos y expectativas.</p></div>
+    <div class="card"><h3>Venture capital</h3><p>Es una forma específica de capital de riesgo orientada a empresas con potencial de crecimiento. La estructura, los hitos y la gobernanza importan tanto como el monto.</p></div>
+    <div class="card"><h3>Valuación y dilución</h3><p>Antes de aceptar capital, entendé valuación pre-money/post-money, porcentaje emitido, preferencias, derechos, opciones y condiciones de rondas futuras.</p></div>
+    <div class="card"><h3>Exit</h3><p>Una empresa puede ser vendida, fusionada, recomprada por sus socios u objeto de otra operación. Construir procesos, clientes diversificados y resultados demostrables puede aumentar alternativas.</p></div>
+   </div>
+   <div class="formula">Participación nueva ≈ inversión / valuación post-money</div>
+  </section>
+
+  <section id="internacional">
+   <div class="section-head"><div><span class="kicker">14</span><h2>Finanzas internacionales</h2></div></div>
+   <div class="grid3">
+    <div class="card"><h3>Tipo de cambio</h3><p>Es el precio relativo entre monedas. Diferenciá precio spot, forward y otras referencias según el instrumento.</p></div>
+    <div class="card"><h3>Riesgo cambiario</h3><p>Existe cuando ingresos, costos, activos y deudas están expuestos a monedas diferentes.</p></div>
+    <div class="card"><h3>Comercio exterior</h3><p>Calculá precio puesto en destino, logística, seguros, aranceles, impuestos, financiación y riesgo de cobranza.</p></div>
+    <div class="card"><h3>Paridad de tasas</h3><p>Las diferencias de tasas entre monedas pueden estar relacionadas con expectativas y precios forward, aunque las fricciones de mercado importan.</p></div>
+    <div class="card"><h3>Diversificación global</h3><p>Invertir en otras geografías puede reducir determinados riesgos de concentración, pero agrega riesgo de moneda, regulación, impuestos y acceso.</p></div>
+    <div class="card"><h3>Negocio digital global</h3><p>Considerá cobros internacionales, comisiones, chargebacks, impuestos indirectos, contratos, privacidad y soporte en distintas zonas horarias.</p></div>
+   </div>
+  </section>
+
+  <section id="argentina">
+   <div class="section-head"><div><span class="kicker">12</span><h2>Argentina: qué estudiar especialmente</h2></div></div>
+   <div class="callout warn">Esta sección es educativa. En Argentina cambian con frecuencia normativa, impuestos, tasas, regulaciones cambiarias, condiciones de crédito y reglas para empresas. Verificá la situación vigente antes de actuar.</div>
+   <div class="grid">
+    <div class="card"><h3>Inflación y precios</h3><p>Aprendé a distinguir salarios nominales de salarios reales, precios relativos e inflación acumulada. Para decisiones de largo plazo, compará en moneda constante cuando sea apropiado.</p></div>
+    <div class="card"><h3>Moneda y cobertura</h3><p>Analizá en qué moneda se generan tus ingresos, se pactan tus deudas y se expresan tus gastos futuros. No existe una cobertura universal sin costo.</p></div>
+    <div class="card"><h3>Impuestos y facturación</h3><p>Conocé el régimen que corresponda a tu actividad, documentación de ventas y compras, obligaciones periódicas y diferencias entre facturación, resultado y caja.</p></div>
+    <div class="card"><h3>Costos laborales</h3><p>Para contratar, presupuestá costo total del puesto, cargas, vacaciones, licencias, indemnizaciones potenciales y administración.</p></div>
+    <div class="card"><h3>Negocios de e-commerce</h3><p>Medí CAC, comisión de plataforma/medios de pago, logística, devoluciones, promociones, stock inmovilizado y margen por SKU.</p></div>
+    <div class="card"><h3>Formalización</h3><p>Separar finanzas personales y del negocio desde temprano facilita conciliaciones, impuestos, análisis y eventual acceso a crédito o inversión.</p></div>
+   </div>
+  </section>
+
+  <section id="calculadoras">
+   <div class="section-head"><div><span class="kicker">Herramientas</span><h2>Calculadoras interactivas</h2></div></div>
+
+   <div class="grid">
+    <div class="card">
+     <h3>1) Interés compuesto</h3>
+     <div class="field-grid">
+      <div><label>Capital inicial</label><input id="ci" type="number" value="100000" min="0"></div>
+      <div><label>aporte mensual</label><input id="ap" type="number" value="50000" min="0"></div>
+      <div><label>Tasa anual %</label><input id="ta" type="number" value="20" step="0.1"></div>
+      <div><label>Años</label><input id="an" type="number" value="10" min="0.1" step="0.1"></div>
+     </div>
+     <button onclick="calcCompound()">Calcular</button>
+     <div class="result" id="compoundResult">—</div>
+    </div>
+
+    <div class="card">
+     <h3>2) Presupuesto personal</h3>
+     <div class="field-grid">
+      <div><label>Ingresos netos</label><input id="ing" type="number" value="1000000"></div>
+      <div><label>Gastos esenciales</label><input id="ess" type="number" value="450000"></div>
+      <div><label>Gastos variables/no esenciales</label><input id="var" type="number" value="180000"></div>
+      <div><label>Deuda mensual</label><input id="dm" type="number" value="120000"></div>
+     </div>
+     <button onclick="calcBudget()">Analizar</button>
+     <div class="result" id="budgetResult">—</div>
+    </div>
+
+    <div class="card">
+     <h3>3) Punto de equilibrio</h3>
+     <div class="field-grid">
+      <div><label>Costos fijos mensuales</label><input id="cf" type="number" value="1000000"></div>
+      <div><label>Precio por unidad</label><input id="pu" type="number" value="25000"></div>
+      <div><label>Costo variable unitario</label><input id="cv" type="number" value="10000"></div>
+      <div><label>Unidades actuales</label><input id="ua" type="number" value="100"></div>
+     </div>
+     <button onclick="calcBreakEven()">Calcular</button>
+     <div class="result" id="beResult">—</div>
+    </div>
+
+    <div class="card">
+     <h3>4) Cuota aproximada</h3>
+     <div class="field-grid">
+      <div><label>Capital</label><input id="lp" type="number" value="5000000"></div>
+      <div><label>Tasa anual %</label><input id="lt" type="number" value="60"></div>
+      <div><label>Plazo (meses)</label><input id="ln" type="number" value="24"></div>
+      <div><label>Periodicidad</label><select id="lpper"><option value="12">Mensual</option><option value="4">Trimestral</option><option value="1">Anual</option></select></div>
+     </div>
+     <button onclick="calcLoan()">Calcular</button>
+     <div class="result" id="loanResult">—</div>
+     <div class="small muted">Modelo de cuota fija simplificado. No incluye impuestos, seguros ni comisiones.</div>
+    </div>
+   </div>
+
+   <div class="grid">
+    <div class="card">
+      <h3>5) Margen y pricing</h3>
+      <div class="field-grid">
+       <div><label>Costo total unitario</label><input id="pc" type="number" value="10000"></div>
+       <div><label>Precio de venta</label><input id="pp" type="number" value="22000"></div>
+       <div><label>Comisión/medios %</label><input id="pm" type="number" value="5"></div>
+       <div><label>Unidades</label><input id="pq" type="number" value="100"></div>
+      </div>
+      <button onclick="calcMargin()">Analizar</button>
+      <div class="result" id="marginResult">—</div>
+    </div>
+
+    <div class="card">
+      <h3>6) Runway de una empresa</h3>
+      <div class="field-grid">
+       <div><label>Caja disponible</label><input id="cash" type="number" value="12000000"></div>
+       <div><label>Ingresos mensuales</label><input id="rin" type="number" value="4000000"></div>
+       <div><label>Egresos mensuales</label><input id="out" type="number" value="5500000"></div>
+       <div><label>Crecimiento/caída esperada de caja mensual %</label><input id="chg" type="number" value="0"></div>
+      </div>
+      <button onclick="calcRunway()">Calcular</button>
+      <div class="result" id="runwayResult">—</div>
+      <div class="small muted">Modelo simple; en una empresa real conviene proyectar mes a mes.</div>
+    </div>
+   </div>
+  </section>
+
+  <section id="plan">
+   <div class="section-head"><div><span class="kicker">Ruta</span><h2>Plan de aprendizaje: 24 semanas</h2></div></div>
+   <div class="timeline">
+    <div class="step"><div class="num">1</div><div class="card"><h3>Semanas 1–2 • Fundamentos</h3><p>Inflación, interés, riesgo, costo de oportunidad, oferta/demanda, patrimonio y flujo de caja.</p></div></div>
+    <div class="step"><div class="num">2</div><div class="card"><h3>Semanas 3–4 • Finanzas personales</h3><p>Presupuesto, fondo de emergencia, seguros, deuda, objetivos y automatización.</p></div></div>
+    <div class="step"><div class="num">3</div><div class="card"><h3>Semanas 5–8 • Inversión</h3><p>Activos, diversificación, valuación, renta fija, renta variable, fondos, riesgo y psicología de mercado.</p></div></div>
+    <div class="step"><div class="num">4</div><div class="card"><h3>Semanas 9–12 • Contabilidad</h3><p>Estado de resultados, balance, caja, capital de trabajo, márgenes, depreciación y conciliación.</p></div></div>
+    <div class="step"><div class="num">5</div><div class="card"><h3>Semanas 13–16 • Emprendimiento</h3><p>Problema, cliente, oferta, MVP, validación, pricing, adquisición y retención.</p></div></div>
+    <div class="step"><div class="num">6</div><div class="card"><h3>Semanas 17–20 • Empresa</h3><p>KPIs, unit economics, contratación, procesos, operaciones, capital de trabajo y financiación.</p></div></div>
+    <div class="step"><div class="num">7</div><div class="card"><h3>Semanas 21–24 • Estrategia</h3><p>Asignación de capital, escenarios, ventaja competitiva, riesgo, gobierno y planificación anual.</p></div></div>
+   </div>
+  </section>
+
+  <section id="checklist">
+   <div class="section-head"><div><span class="kicker">Acción</span><h2>Checklists</h2></div></div>
+   <div class="grid">
+    <div class="card checklist">
+     <h3>Checklist financiero personal</h3>
+     <label><input type="checkbox"> Sé cuánto ingreso neto realmente tengo.</label>
+     <label><input type="checkbox"> Conozco mis gastos esenciales mensuales.</label>
+     <label><input type="checkbox"> Tengo identificados mis gastos periódicos.</label>
+     <label><input type="checkbox"> Conozco todas mis deudas y su costo.</label>
+     <label><input type="checkbox"> Tengo un fondo para emergencias acorde a mi situación.</label>
+     <label><input type="checkbox"> Tengo seguros adecuados para riesgos relevantes.</label>
+     <label><input type="checkbox"> Sé cuánto vale mi patrimonio neto.</label>
+     <label><input type="checkbox"> Tengo objetivos financieros con fecha y monto.</label>
+    </div>
+    <div class="card checklist">
+     <h3>Checklist de un negocio</h3>
+     <label><input type="checkbox"> Puedo explicar el problema que resuelvo en una frase.</label>
+     <label><input type="checkbox"> Sé quién es el cliente y por qué compra.</label>
+     <label><input type="checkbox"> Conozco el margen de cada producto/servicio.</label>
+     <label><input type="checkbox"> Conozco CAC, retención y/o recompra.</label>
+     <label><input type="checkbox"> Tengo flujo de caja proyectado.</label>
+     <label><input type="checkbox"> Sé mi punto de equilibrio.</label>
+     <label><input type="checkbox"> No mezclo caja personal y empresarial.</label>
+     <label><input type="checkbox"> Tengo documentación y contratos básicos.</label>
+    </div>
+   </div>
+  </section>
+
+  <section id="glosario">
+   <div class="section-head"><div><span class="kicker">Referencia</span><h2>Glosario esencial</h2></div></div>
+   <dl class="glossary">
+    <dt>Activo</dt><dd>Recurso que posee valor económico y está bajo control de una persona o empresa.</dd>
+    <dt>Pasivo</dt><dd>Obligación económica existente.</dd>
+    <dt>Patrimonio neto</dt><dd>Activos menos pasivos.</dd>
+    <dt>Liquidez</dt><dd>Facilidad para convertir algo en dinero sin pérdida significativa de valor.</dd>
+    <dt>Inflación</dt><dd>Aumento sostenido del nivel general de precios.</dd>
+    <dt>Tasa real</dt><dd>Tasa ajustada para aproximar el efecto de la inflación.</dd>
+    <dt>Riesgo</dt><dd>Posibilidad de resultados distintos del esperado, incluyendo pérdidas.</dd>
+    <dt>Volatilidad</dt><dd>Medida de variación de precios o rendimientos.</dd>
+    <dt>Diversificación</dt><dd>Distribución de exposición entre distintos riesgos.</dd>
+    <dt>Margen bruto</dt><dd>Ventas menos costos directos, dividido por ventas.</dd>
+    <dt>Margen de contribución</dt><dd>Lo que queda de cada venta después de costos variables para cubrir fijos y generar resultado.</dd>
+    <dt>CAC</dt><dd>Costo de adquisición de cliente.</dd>
+    <dt>LTV</dt><dd>Valor esperado aportado por un cliente durante su relación con el negocio.</dd>
+    <dt>Churn</dt><dd>Tasa de pérdida de clientes o ingresos.</dd>
+    <dt>Runway</dt><dd>Tiempo estimado que una empresa puede sostener su consumo neto de caja actual.</dd>
+    <dt>Capital de trabajo</dt><dd>Recursos comprometidos en la operación de corto plazo.</dd>
+    <dt>ROI</dt><dd>Retorno sobre una inversión según una definición específica.</dd>
+    <dt>ROIC</dt><dd>Retorno sobre capital invertido.</dd>
+    <dt>Flujo de caja</dt><dd>Entradas y salidas efectivas de efectivo durante un período.</dd>
+    <dt>Valuación</dt><dd>Estimación del valor económico de un activo o empresa mediante un método determinado.</dd>
+    <dt>Costo hundido</dt><dd>Gasto pasado que no debería determinar por sí solo una decisión futura.</dd>
+    <dt>Costo de oportunidad</dt><dd>Valor de la mejor alternativa sacrificada.</dd>
+    <dt>Apalancamiento</dt><dd>Uso de deuda u otras obligaciones para aumentar exposición a una inversión o negocio.</dd>
+    <dt>Escenario</dt><dd>Conjunto coherente de supuestos usados para analizar posibles resultados.</dd>
+   </dl>
+  </section>
+
+
+  <section id="decisiones">
+   <div class="section-head"><div><span class="kicker">Marco universal</span><h2>Cómo tomar decisiones financieras difíciles</h2></div></div>
+   <div class="grid3">
+    <div class="card"><h3>1. Definí el objetivo</h3><p>¿Qué querés maximizar o proteger: liquidez, patrimonio, crecimiento, seguridad, tiempo o flexibilidad?</p></div>
+    <div class="card"><h3>2. Poné números</h3><p>Precio, costo total, probabilidad, plazo, flujo mensual, peor caso y costo de oportunidad.</p></div>
+    <div class="card"><h3>3. Mirá el downside</h3><p>¿Qué pasa si el ingreso cae 30%, el cliente se va, la tasa sube o el activo pierde valor?</p></div>
+    <div class="card"><h3>4. Compará alternativas</h3><p>No compares contra “hacer nada”; compará contra la mejor alternativa disponible.</p></div>
+    <div class="card"><h3>5. Revisá reversibilidad</h3><p>Una decisión reversible permite experimentar. Una irreversible exige mayor análisis y margen de seguridad.</p></div>
+    <div class="card"><h3>6. Definí gatillos</h3><p>Antes de actuar, establecé qué señal te haría aumentar, reducir, detener o cambiar una estrategia.</p></div>
+   </div>
+  </section>
+
+  <section id="principios">
+   <div class="section-head"><div><span class="kicker">Cierre</span><h2>20 principios para recordar</h2></div></div>
+   <div class="grid3">
+    <div class="card"><b>1.</b> Facturar no es ganar.</div>
+    <div class="card"><b>2.</b> Ganar más no garantiza acumular patrimonio.</div>
+    <div class="card"><b>3.</b> La liquidez compra tiempo.</div>
+    <div class="card"><b>4.</b> La deuda tiene precio y riesgo.</div>
+    <div class="card"><b>5.</b> El interés compuesto premia tiempo y constancia.</div>
+    <div class="card"><b>6.</b> La diversificación reduce concentración; no elimina pérdidas.</div>
+    <div class="card"><b>7.</b> El mejor plan es uno que podés sostener.</div>
+    <div class="card"><b>8.</b> Tu presupuesto es una decisión, no un castigo.</div>
+    <div class="card"><b>9.</b> El precio debe considerar valor, costos y demanda.</div>
+    <div class="card"><b>10.</b> Caja y utilidad son cosas distintas.</div>
+    <div class="card"><b>11.</b> Crecer puede consumir caja.</div>
+    <div class="card"><b>12.</b> Medí por unidad, cliente y período.</div>
+    <div class="card"><b>13.</b> Automatizar reduce errores humanos.</div>
+    <div class="card"><b>14.</b> Los incentivos cambian conductas.</div>
+    <div class="card"><b>15.</b> Un seguro cubre riesgos, no malas decisiones de negocio.</div>
+    <div class="card"><b>16.</b> El costo real importa más que la etiqueta comercial.</div>
+    <div class="card"><b>17.</b> No confundas correlación con causalidad.</div>
+    <div class="card"><b>18.</b> Los escenarios preparan; no predicen.</div>
+    <div class="card"><b>19.</b> Documentar procesos aumenta control y escala.</div>
+    <div class="card"><b>20.</b> El objetivo final del dinero es ampliar tus opciones y capacidad de decisión.</div>
+   </div>
+  </section>
+ </main>
+</div>
+
+<footer>
+ <div class="container">
+  <p><b>Nota de uso:</b> material educativo. No sustituye asesoramiento financiero, contable, tributario o legal. Verificá siempre la normativa y las condiciones concretas del producto o contrato antes de tomar decisiones.</p>
+  <p class="small">Documento autocontenido: no necesita librerías externas para funcionar. Tus casillas de checklist se guardan en el navegador de forma local.</p>
+ </div>
+</footer>
+
+<script>
+function money(n){return new Intl.NumberFormat('es-AR',{style:'currency',currency:'ARS',maximumFractionDigits:0}).format(n||0)}
+function num(id){return parseFloat(document.getElementById(id).value)||0}
+
+function calcCompound(){
+ const pv=num('ci'), pmt=num('ap'), r=Math.pow(1+num('ta')/100,1/12)-1, months=Math.round(num('an')*12);
+ let v=pv;
+ for(let i=0;i<months;i++) v=v*(1+r)+pmt;
+ const aportes=pv+pmt*months;
+ const intereses=v-aportes;
+ document.getElementById('compoundResult').innerHTML=`<strong>Valor futuro: ${money(v)}</strong><br>Capital + aportes: ${money(aportes)}<br>Intereses/rendimiento teórico: ${money(intereses)}<br><span class="muted small">Modelo con tasa anual efectiva convertida a mensual y aportes al final de cada mes.</span>`;
+}
+function calcBudget(){
+ const ing=num('ing'), total=num('ess')+num('var')+num('dm'), libre=ing-total, ratio=ing?libre/ing:0;
+ let cls=ratio>=.2?'pill-good':ratio>=.05?'pill-warn':'pill-bad';
+ document.getElementById('budgetResult').innerHTML=`<strong>Dinero no comprometido: ${money(libre)}</strong><br>Tasa de ahorro/libre: <span class="${cls}">${(ratio*100).toFixed(1)}%</span><br>Gasto total considerado: ${money(total)}<br><span class="muted small">No existe un porcentaje universal correcto: usá este indicador para ver capacidad de maniobra.</span>`;
+}
+function calcBreakEven(){
+ const f=num('cf'), p=num('pu'), c=num('cv'), q=num('ua'), mc=p-c;
+ if(mc<=0){document.getElementById('beResult').innerHTML='<span class="pill-bad">El margen de contribución por unidad no es positivo.</span>';return}
+ const u=Math.ceil(f/mc), sales=u*p, current=q*mc-f;
+ document.getElementById('beResult').innerHTML=`<strong>Punto de equilibrio: ${u.toLocaleString('es-AR')} unidades</strong><br>Facturación aproximada al equilibrio: ${money(sales)}<br>Resultado con ${q.toLocaleString('es-AR')} unidades: ${money(current)}<br>Margen de contribución unitario: ${money(mc)}`;
+}
+function calcLoan(){
+ const P=num('lp'), annual=num('lt')/100, n=num('ln'), per=parseInt(document.getElementById('lpper').value);
+ const r=annual/per, N=Math.max(1,Math.round(n/(12/per)));
+ if(r===0){document.getElementById('loanResult').innerHTML=`<strong>Cuota: ${money(P/N)}</strong>`;return}
+ const cuota=P*(r*Math.pow(1+r,N))/(Math.pow(1+r,N)-1);
+ document.getElementById('loanResult').innerHTML=`<strong>Cuota aproximada: ${money(cuota)}</strong><br>Total de cuotas: ${money(cuota*N)}<br>Interés aproximado: ${money(cuota*N-P)}<br><span class="muted small">No representa necesariamente la Tasa Efectiva Total de una oferta real.</span>`;
+}
+function calcMargin(){
+ const c=num('pc'), p=num('pp'), m=num('pm')/100, q=num('pq');
+ const fee=p*m, contrib=p-c-fee, margin=p?contrib/p:0, total=contrib*q;
+ document.getElementById('marginResult').innerHTML=`<strong>Contribución por unidad: ${money(contrib)}</strong><br>Margen de contribución: ${(margin*100).toFixed(1)}%<br>Contribución para ${q.toLocaleString('es-AR')} unidades: ${money(total)}<br><span class="muted small">Aún deben descontarse costos fijos, impuestos y otros conceptos no incluidos.</span>`;
+}
+function calcRunway(){
+ const cash=num('cash'), rin=num('rin'), out=num('out'), burn=out-rin;
+ if(burn<=0){document.getElementById('runwayResult').innerHTML='<strong class="pill-good">Con estos datos no hay consumo neto mensual.</strong><br>El modelo simple no da un runway finito.';return}
+ const months=cash/burn;
+ document.getElementById('runwayResult').innerHTML=`<strong>Runway aproximado: ${months.toFixed(1)} meses</strong><br>Consumo neto mensual: ${money(burn)}<br><span class="muted small">Idealmente proyectá cada mes porque ingresos, costos y financiación cambian.</span>`;
+}
+function toggleTheme(){
+ const light=document.body.dataset.light==='1';
+ if(!light){
+  document.body.dataset.light='1';
+  document.documentElement.style.setProperty('--bg','#f5f7fb');
+  document.documentElement.style.setProperty('--panel','#ffffff');
+  document.documentElement.style.setProperty('--panel2','#ffffff');
+  document.documentElement.style.setProperty('--text','#111827');
+  document.documentElement.style.setProperty('--muted','#5d6678');
+  document.documentElement.style.setProperty('--line','#dfe4ec');
+  document.querySelectorAll('.card,.hero-card').forEach(e=>e.style.background='#fff');
+ }else{
+  document.body.dataset.light='0';
+  location.reload();
+ }
+}
+function getChecks(){return JSON.parse(localStorage.getItem('finchecks')||'[]')}
+function saveChecks(){
+ const arr=[...document.querySelectorAll('.checklist input')].map(x=>x.checked);
+ localStorage.setItem('finchecks',JSON.stringify(arr));
+ updateProgress();
+}
+function restoreChecks(){
+ const arr=getChecks();
+ document.querySelectorAll('.checklist input').forEach((x,i)=>x.checked=!!arr[i]);
+ updateProgress();
+}
+function updateProgress(){
+ const boxes=[...document.querySelectorAll('.checklist input')];
+ const done=boxes.filter(x=>x.checked).length;
+ document.getElementById('progressBar').style.width=(boxes.length?done/boxes.length*100:0)+'%';
+}
+function markAll(){
+ document.querySelectorAll('.checklist input').forEach(x=>x.checked=true);
+ saveChecks();
+}
+document.addEventListener('change',e=>{if(e.target.matches('.checklist input'))saveChecks()});
+restoreChecks(); calcCompound(); calcBudget(); calcBreakEven(); calcLoan(); calcMargin(); calcRunway();
+</script>
+</body>
+</html>
